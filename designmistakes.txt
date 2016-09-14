@@ -1,0 +1,31 @@
+new feature suggestion:
+read cpu fan speed/voltage from computer mainboard
+
+mistake 1:
+programming pin RA0/ICDSPDAT pin19 on MCU is connected
+with output pin3 of IC1 74HC4051. When
+programmer is connected there will be two outputs
+conflicting on the same line. This was fine with cd4051, but
+not 74hc4051. Reason perhaps cd4051 has 125Ohm output and
+74HC4051 has 70OHm output at 5V and drag the ICDSPDAT too
+much.
+- Suggest splitting sense line with 100ohm resistor, or
+  better: move sense line and use RA0 as output
+  (for example ctrb)
+action: detatch swap SENSE with CTRLB.
+
+mistake 2:
+USB D+ and D- are crossed.
+
+improvement 1:
+LED1 and 2 to VDD not VCC
+
+improvement 2:
+jumper a bit close to heatsink. Remove jumper ?
+
+Soldering the micro usb connector. There are four soldering
+mounting terminals. One on each side and two underneath.
+Seemingly there are no tabs underneath the connector, but
+if solder is applied beforehand, then the casing can be
+heated with tin underneath.
+
